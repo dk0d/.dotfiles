@@ -1,0 +1,53 @@
+[
+  {
+    "defaults": {
+      "link": {
+        "create": true,
+        "relink": true,
+        "force": false
+      }
+    }
+  },
+  {
+    "link": {
+      "~/.tmux.conf": "tmux/tmux.conf",
+      "~/.bash_profile": "bash/bash_profile",
+      "~/.ideavimrc": "idea/ideavimrc",
+      "~/.git-prompt.sh": "git/git-prompt.sh",
+      "~/.gitconfig": "git/.gitconfig",
+      "~/.zshrc.local": "zsh/zshrc.sh",
+      "~/.config/starship.toml": "starship/starship.toml",
+      "~/.jupyter/jupyter_console_config.py": "jupyter/console.py",
+      "~/.jupyter/jupyter_qtconsole_config.py": "jupyter/qtconsole.py",
+      "~/.config/skhd": {
+        "create": true,
+        "path": "skhd"
+      },
+      "~/.config/yabai": {
+        "create": true,
+        "path": "yabai"
+      },
+      "~/.config/nvim": {
+        "create": true,
+        "path": "astro"
+      },
+      "~/.config/astronvim/lua/user": {
+        "path": "nvim_user"
+      },
+      "~/Library/Application Support/Code/User/settings.json": {
+        "path": "vscode/settings.json",
+        "force": true
+      },
+      "~/Library/Application Support/Code/User/keybindings.json": {
+        "path": "vscode/keybindings.json",
+        "force": true
+      }
+    }
+  },
+  {
+    "shell": [
+      "chmod +x ~/.config/yabai/yabairc",
+      "chmod +x ~/.config/skhd/skhdrc"
+    ]
+  }
+]

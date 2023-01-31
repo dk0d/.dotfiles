@@ -1,0 +1,5 @@
+changeps1: False
+envs_dirs:
+  - ~/.conda/envs
+pkgs_dirs: 
+  - ~/.conda/pkgs
