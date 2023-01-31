@@ -22,19 +22,19 @@ local function setup_colors()
   local DiagnosticInfo = astronvim.get_hlgroup("DiagnosticInfo", { fg = C.white_2, bg = C.grey_4 })
   local DiagnosticHint = astronvim.get_hlgroup("DiagnosticHint", { fg = C.yellow_1, bg = C.grey_4 })
   local HeirlineInactive = astronvim.get_hlgroup("HeirlineInactive", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("inactive", C.grey_7)
+      or astronvim.status.hl.lualine_mode("inactive", C.grey_7)
   local HeirlineNormal = astronvim.get_hlgroup("HeirlineNormal", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("normal", C.blue)
+      or astronvim.status.hl.lualine_mode("normal", C.blue)
   local HeirlineInsert = astronvim.get_hlgroup("HeirlineInsert", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("insert", C.green)
+      or astronvim.status.hl.lualine_mode("insert", C.green)
   local HeirlineVisual = astronvim.get_hlgroup("HeirlineVisual", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("visual", C.purple)
+      or astronvim.status.hl.lualine_mode("visual", C.purple)
   local HeirlineReplace = astronvim.get_hlgroup("HeirlineReplace", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("replace", C.red_1)
+      or astronvim.status.hl.lualine_mode("replace", C.red_1)
   local HeirlineCommand = astronvim.get_hlgroup("HeirlineCommand", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("command", C.yellow_1)
+      or astronvim.status.hl.lualine_mode("command", C.yellow_1)
   local HeirlineTerminal = astronvim.get_hlgroup("HeirlineTerminal", { fg = nil }).fg
-    or astronvim.status.hl.lualine_mode("inactive", HeirlineInsert)
+      or astronvim.status.hl.lualine_mode("inactive", HeirlineInsert)
 
   local colors = astronvim.user_plugin_opts("heirline.colors", {
     close_fg = Error.fg,
@@ -150,7 +150,7 @@ astronvim.status.heirline.make_buflist = function(component)
           condition = function(self) return self._show_picker end,
           update = false,
           init = function(self)
-            local bufname = astronvim.status.provider.filename { fallback = "empty_file" }(self)
+            local bufname = astronvim.status.provider.filename { fallback = "empty_file" } (self)
             local label = bufname:sub(1, 1)
             local i = 2
             while label ~= " " and self._picker_labels[label] do
@@ -168,12 +168,12 @@ astronvim.status.heirline.make_buflist = function(component)
         },
         component, -- create buffer component
       },
-      false -- disable surrounding
+      false-- disable surrounding
     ),
     { provider = astronvim.get_icon "ArrowLeft" .. " ", hl = overflow_hl },
     { provider = astronvim.get_icon "ArrowRight" .. " ", hl = overflow_hl },
     function() return vim.t.bufs end, -- use astronvim bufs variable
-    false -- disable internal caching
+    false-- disable internal caching
   )
 end
 
@@ -209,8 +209,8 @@ local heirline_opts = astronvim.user_plugin_opts("plugins.heirline", {
     -- TODO: REMOVE THIS WITH v3
     astronvim.status.component.file_info(
       (astronvim.is_available "bufferline.nvim" or vim.g.heirline_bufferline)
-          and { filetype = {}, filename = false, file_modified = false }
-        or nil
+      and { filetype = {}, filename = false, file_modified = false }
+      or nil
     ),
     -- astronvim.status.component.file_info { filetype = {}, filename = false, file_modified = false },
     astronvim.status.component.git_diff(),
@@ -280,9 +280,14 @@ local heirline_opts = astronvim.user_plugin_opts("plugins.heirline", {
           },
         },
       }
-    or nil,
+      or nil,
 })
-heirline.setup(heirline_opts[1], heirline_opts[2], heirline_opts[3])
+
+heirline.setup {
+  statusline = heirline_opts[1],
+  winbar = heirline_opts[2],
+  heirline_opts[3],
+}
 
 local augroup = vim.api.nvim_create_augroup("Heirline", { clear = true })
 vim.api.nvim_create_autocmd("User", {
@@ -296,12 +301,11 @@ vim.api.nvim_create_autocmd("User", {
   group = augroup,
   desc = "Disable winbar for some filetypes",
   callback = function()
-    if
-      vim.opt.diff:get()
-      or astronvim.status.condition.buffer_matches(require("heirline").winbar.disabled or {
-        buftype = { "terminal", "prompt", "nofile", "help", "quickfix" },
-        filetype = { "NvimTree", "neo%-tree", "dashboard", "Outline", "aerial" },
-      }) -- TODO v3: remove the default fallback here
+    if vim.opt.diff:get()
+        or astronvim.status.condition.buffer_matches(require("heirline").winbar.disabled or {
+          buftype = { "terminal", "prompt", "nofile", "help", "quickfix" },
+          filetype = { "NvimTree", "neo%-tree", "dashboard", "Outline", "aerial" },
+        }) -- TODO v3: remove the default fallback here
     then
       vim.opt_local.winbar = nil
     end

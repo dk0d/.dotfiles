@@ -29,7 +29,7 @@
       },
       "~/.config/nvim": {
         "create": true,
-        "path": ".astro"
+        "path": "astronvim"
       },
       "~/.config/astronvim/lua/user": {
         "path": "nvim_user"
