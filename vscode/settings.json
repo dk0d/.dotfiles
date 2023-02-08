@@ -1,9 +1,9 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Sonokai Shusia",
+  "workbench.colorTheme": "Default Light+",
   "editor.minimap.enabled": false,
-  "python.jediEnabled": false,
-  "python.linting.pylintEnabled": false,
+  // "python.jediEnabled": false,
+  // "python.linting.pylintEnabled": false,
   "workbench.colorCustomizations": {},
   "emmet.triggerExpansionOnTab": true,
   "editor.suggestSelection": "first",
@@ -13,12 +13,12 @@
   //   "type": "none"
   // },
   "terminal.integrated.inheritEnv": false,
-  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%)\\s*($TAGS)|^\\s*- \\[ \\])",
-  "todo-tree.tree.showCountsInTree": true,
+  // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%)\\s*($TAGS)|^\\s*- \\[ \\])",
+  // "todo-tree.tree.showCountsInTree": true,
   "editor.wordWrap": "on",
   "editor.renderLineHighlight": "all",
   "git.ignoreLegacyWarning": true,
-  "todo-tree.tree.showScanModeButton": false,
+  // "todo-tree.tree.showScanModeButton": false,
   "files.watcherExclude": {
     "**/.conda/**": true,
     "**/data/**": true,
@@ -275,7 +275,7 @@
       "before": [
         "<leader>",
         "f",
-        "m"
+        "d"
       ],
       "commands": [
         "editor.action.formatDocument"
@@ -514,6 +514,36 @@
       "commands": [
         "workbench.action.focusPreviousGroup"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "i"
+      ],
+      "commands": [
+        "python.sortImports"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "g",
+        "k"
+      ],
+      "commands": [
+        "workbench.view.scm"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "g",
+        "p"
+      ],
+      "commands": [
+        "git.push"
+      ]
     }
   ],
   "vim.autoindent": true,
@@ -544,11 +574,10 @@
   "prettier.tabWidth": 4,
   "editor.fontLigatures": true,
   "liveServer.settings.donotShowInfoMsg": true,
-  "editor.fontFamily": "'JetBrains Mono', Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FiraCode Nerd Font Mono', Monaco, 'Courier New', monospace",
   "[latex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   },
-  "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
@@ -570,5 +599,16 @@
   "materialTheme.accent": "Yellow",
   "debug.allowBreakpointsEverywhere": true,
   "debug.console.fontSize": 10,
-  "debug.console.historySuggestions": false
+  "debug.console.historySuggestions": false,
+  "workbench.sideBar.location": "right",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "[swift]": {
+    "editor.defaultFormatter": "vknabel.vscode-swiftformat"
+  },
+  "apple-swift-format.path": [
+    "/usr/bin/env",
+    "swift-format"
+  ],
+  "vetur.format.options.tabSize": 4,
+  "xml.format.splitAttributesIndentSize": 4
 }

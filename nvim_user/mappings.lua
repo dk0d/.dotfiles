@@ -22,11 +22,11 @@ return {
 		['<c-u>'] = { '<c-u>zz', desc = 'scroll and center' },
 		-- quick save
 		-- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-		['<leader>fm'] = {
+		['<leader>fd'] = {
 			function()
 				vim.lsp.buf.format(astronvim.lsp.format_opts)
 			end,
-			desc = 'Format code',
+			desc = 'Format document',
 		},
 
 		-- Debugging

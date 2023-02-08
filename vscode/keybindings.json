@@ -68,16 +68,6 @@
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
   {
-    "key": "cmd+k",
-    "command": "git.commitAll",
-    "when": "!commitInProgress && !inDebugMode && !terminalFocus"
-  },
-  {
-    "key": "cmd+k",
-    "command": "-git.commitAll",
-    "when": "!commitInProgress && !inDebugMode && !terminalFocus"
-  },
-  {
     "key": "shift+cmd+h",
     "command": "extension.dash.emptySyntax",
     "when": "editorTextFocus"
@@ -116,5 +106,25 @@
     "key": "ctrl+h",
     "command": "-extension.dash.specific",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "jupyter.runcurrentcelladvance",
+    "when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-jupyter.runcurrentcelladvance",
+    "when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  },
+  {
+    "key": "shift+enter",
+    "command": "jupyter.runcurrentcell",
+    "when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !jupyter.havenativecells && !notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-jupyter.runcurrentcell",
+    "when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !jupyter.havenativecells && !notebookEditorFocused"
   }
 ]
