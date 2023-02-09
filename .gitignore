@@ -3,6 +3,6 @@ spell
 ftplugin
 **/**/packer_compiled.lua
 coc-settings.json
- .luarc.json
+.luarc.json
 
 
