@@ -9,7 +9,7 @@ alias duh_='du -h -d 1 . > foldersizes.txt &'
 # Hipergator
 alias slq='squeue -A woodard'
 alias slqm='squeuemine'
-alias hpi="srun --partition=hgp-dev --mem=4gb --ntasks=1 --cpus-per-task=8 --time=04:00:00 --pty bash -i"
+alias hpi="srun --partition=hpg-dev --mem=4gb --ntasks=1 --cpus-per-task=8 --time=04:00:00 --pty bash -i"
 alias igpu='srun --mem=8gb --nodes=1 --time=08:00:00 --tasks=1 --cpus-per-task=10 --partition=gpu --qos=woodard --gres=gpu:geforce:1 --pty -u bash -i'
 alias igpu2='srun --mem=8gb --nodes=1 --time=08:00:00 --tasks=1 --cpus-per-task=10 --partition=gpu --qos=woodard --gres=gpu:geforce:2 --pty -u bash -i'
 alias igpu4='srun --mem=8gb --nodes=1 --time=08:00:00 --tasks=1 --cpus-per-task=10 --partition=gpu --qos=woodard --gres=gpu:geforce:4 --pty -u bash -i'

@@ -5,34 +5,34 @@
 # --------------------------------------------------------------------
 
 if [ "$PLATFORM" = Linux ]; then
-  PS1="\[\e[1;38m\]\u\[\e[1;34m\]@\[\e[0;1;31m\]\H\[\e[0;1;30m\]:"
-  PS1="$PS1\[\e[0;38m\]\w\[\e[1;35m\] > \[\e[0m\]"
+    PS1="\[\e[1;38m\]\u\[\e[1;34m\]@\[\e[0;1;31m\]\H\[\e[0;1;30m\]:"
+    PS1="$PS1\[\e[0;38m\]\w\[\e[1;35m\] > \[\e[0m\]"
 else
-  ### git-prompt
-  __git_ps1() { :;}
-  if [ -e ~/.git-prompt.sh ]; then
-    source ~/.git-prompt.sh
-  fi
-  PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[0;35m\]:\[\e[1;31m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\] > \[\e[0m\]'
+    ### git-prompt
+    __git_ps1() { :;}
+    if [ -e ~/.git-prompt.sh ]; then
+        source ~/.git-prompt.sh
+    fi
+    PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[0;35m\]:\[\e[1;31m\]\w\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\] > \[\e[0m\]'
 fi
 
 export PATH=$HOME/.local/bin:$PATH
 
 ### Colored ls
 if [ -x /usr/bin/dircolors ]; then
-  eval "`dircolors -b`"
-  alias ls='ls --color=auto'
-  alias grep='grep --color=auto'
+    eval "`dircolors -b`"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
 elif [ "$PLATFORM" = Darwin ]; then
-  alias ls='ls -G'
+    alias ls='ls -G'
 fi
 
 if [ -f ~/.dotfiles/zsh/aliases.sh ]; then
-  source ~/.dotfiles/zsh/aliases.sh
+    source ~/.dotfiles/zsh/aliases.sh
 fi
 
 if [ -f ~/.dotfiles/zsh/functions.sh ]; then
-  source ~/.dotfiles/zsh/functions.sh
+    source ~/.dotfiles/zsh/functions.sh
 fi
 
 if [ -f ~/.bashrc ]; then
@@ -40,12 +40,12 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [ -d ~/blue ]; then
-  export POETRY_CONFIG_DIR=~/blue/.config/pypoetry
-  export POETRY_CACHE_DIR=~/blue/.cache/pypoetry
-else 
-  export POETRY_CONFIG_DIR=~/.config/pypoetry
-  export POETRY_CACHE_DIR=~/.cache/pypoetry
-fi 
+    export POETRY_CONFIG_DIR=~/blue/.config/pypoetry
+    export POETRY_CACHE_DIR=~/blue/.cache/pypoetry
+else
+    export POETRY_CONFIG_DIR=~/.config/pypoetry
+    export POETRY_CACHE_DIR=~/.cache/pypoetry
+fi
 
 
 
