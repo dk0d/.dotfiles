@@ -1,6 +1,6 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "Bearded Theme Light",
   "editor.minimap.enabled": false,
   // "python.jediEnabled": false,
   // "python.linting.pylintEnabled": false,
@@ -528,11 +528,10 @@
     {
       "before": [
         "<leader>",
-        "g",
         "k"
       ],
       "commands": [
-        "workbench.view.scm"
+        "git.commitAll"
       ]
     },
     {
@@ -564,7 +563,7 @@
   "jupyter.askForKernelRestart": false,
   "[python]": {
     "editor.wordBasedSuggestions": false,
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnType": true
   },
   "cSpell.enabled": false,
@@ -598,9 +597,8 @@
   "material-icon-theme.hidesExplorerArrows": false,
   "materialTheme.accent": "Yellow",
   "debug.allowBreakpointsEverywhere": true,
-  "debug.console.fontSize": 10,
+  "debug.console.fontSize": 14,
   "debug.console.historySuggestions": false,
-  "workbench.sideBar.location": "right",
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "[swift]": {
     "editor.defaultFormatter": "vknabel.vscode-swiftformat"
@@ -610,5 +608,6 @@
     "swift-format"
   ],
   "vetur.format.options.tabSize": 4,
-  "xml.format.splitAttributesIndentSize": 4
+  "xml.format.splitAttributesIndentSize": 4,
+  "redhat.telemetry.enabled": false
 }
