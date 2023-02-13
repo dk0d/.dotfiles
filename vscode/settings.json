@@ -609,5 +609,6 @@
   ],
   "vetur.format.options.tabSize": 4,
   "xml.format.splitAttributesIndentSize": 4,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "vim.neovimPath": "/usr/local/bin/nvim"
 }
