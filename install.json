@@ -29,10 +29,7 @@
       },
       "~/.config/nvim": {
         "create": true,
-        "path": "astronvim"
-      },
-      "~/.config/astronvim/lua/user": {
-        "path": "nvim_user"
+        "path": "nvim"
       },
       "~/Library/Application Support/Code/User/settings.json": {
         "path": "vscode/settings.json",
