@@ -33,15 +33,30 @@ map('n', "<leader>sp", require("telescope.builtin").help_tags, { desc = "Search 
 map('n', "<leader>sh", require("telescope.builtin").oldfiles, { desc = "Search history" })
 map('n', "<leader>sc", require("telescope.builtin").grep_string,
     { desc = "Search for word under cursor" })
-map('n', "<leader>sm",  require("telescope.builtin").marks, { desc = "Search marks" })
-map('n', "<leader>sM",  require("telescope.builtin").man_pages, { desc = "Search man" })
-map('n', "<leader>sr",  require("telescope.builtin").registers, { desc = "Search registers" })
+map('n', "<leader>sm", require("telescope.builtin").marks, { desc = "Search marks" })
+map('n', "<leader>sM", require("telescope.builtin").man_pages, { desc = "Search man" })
+map('n', "<leader>sr", require("telescope.builtin").registers, { desc = "Search registers" })
+
 -- Git
 map('n', '<leader>gt', require('telescope.builtin').git_status, { desc = "Git Status" })
 map('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = "Git Branches" })
 
 -- DAP
-map('n', '<leader>b', "<cmd> lua require'dap'.toggle_breakpoints()<cr>", { desc = 'Toggle Breakpoints' })
+if Util.has('nvim-dap.nvim') then
+    map('n', '<leader>b', require 'dap'.toggle_breakpoints, { desc = 'Toggle Breakpoints' })
+    map('n', '<leader>bl', require 'dap'.list_breakpoints, { desc = 'List Breakpoints' })
+    map('n', '<leader>da', require 'dap'.clear_breakpoints, { desc = 'Clear Breakpoints' })
+    map('n', '<leader>dc', function() require 'dap'.set_breakpoint(vim.fn.input('Condition')) end,
+        { desc = 'Set Conditional Breakpoint: ' })
+    map('n', '<leader>xc', require 'dap'.continue, { desc = 'DAP Debug continue' })
+    map('n', '<leader>so', require 'dap'.step_over, { desc = 'DAP Step over' })
+    map('n', '<leader>si', require 'dap'.step_into, { desc = 'DAP Step into' })
+    map('n', '<leader>su', require 'dap'.step_out, { desc = 'DAP Step out' })
+    map('n', '<leader>st', require 'dap'.terminate, { desc = 'DAP Terminate' })
+    map('n', '<leader>dl', require 'dap'.run_last, { desc = 'DAP Run Last' })
+end
+
+
 
 -- Format
 map('n', '<leader>fd',
@@ -51,4 +66,9 @@ map('n', '<leader>fd',
     { desc = 'Format Code' }
 )
 
-
+-- Diagnostics
+map('n', 'ge', function() vim.diagnostic.goto_next { wrap = true, float = true } end, { desc = 'Diagnostic goto next' })
+map('n', 'gE', function() vim.diagnostic.goto_prev { wrap = true, float = true } end,
+    { desc = 'Diagnostic goto previous' })
+map('n', '<leader>sl', function() vim.diagnostic.open_float(0, { scope = 'line' }) end,
+    { desc = 'Diagnostic open float' })
