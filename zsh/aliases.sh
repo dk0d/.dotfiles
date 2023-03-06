@@ -1,7 +1,13 @@
-alias l='ls -lGah'
-alias la='ls -lGAh'
-alias ll='ls -lGh'
-alias lsa='ls -lGah'
+if ! command -v exa &>/dev/null 
+then 
+  alias l='ls -lGah'
+  alias la='ls -lGAh'
+  alias ll='ls -lGh'
+else 
+  alias l='exa -l'
+  alias la='exa -la'
+  alias li='ls -la --icons'
+fi
 
 alias duh='du -h -d 1 .'
 alias duh_='du -h -d 1 . > foldersizes.txt &'

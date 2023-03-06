@@ -1,6 +1,6 @@
 {
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Bearded Theme Light",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Bearded Theme Black & Amethyst",
   "editor.minimap.enabled": false,
   // "python.jediEnabled": false,
   // "python.linting.pylintEnabled": false,
@@ -151,7 +151,15 @@
   ],
   "python.autoComplete.extraPaths": [
     "/usr/local/anaconda3/",
-    "/usr/local/anaconda3/bin/"
+    "/usr/local/anaconda3/bin/",
+    "${workspaceFolder}/__pypackages__/3.9/lib",
+    "${workspaceFolder}/__pypackages__/3.10/lib"
+  ],
+  "python.analysis.extraPaths": [
+    "/usr/local/anaconda3/",
+    "/usr/local/anaconda3/bin/",
+    "${workspaceFolder}/__pypackages__/3.9/lib",
+    "${workspaceFolder}/__pypackages__/3.10/lib",
   ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -168,10 +176,6 @@
   // "workbench.editorAssociations": {
   //   "*.ipynb": "jupyter.notebook.ipynb"
   // },
-  "python.analysis.extraPaths": [
-    "/usr/local/anaconda3/",
-    "/usr/local/anaconda3/bin/"
-  ],
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -235,8 +239,7 @@
     },
     {
       "before": [
-        "<leader>",
-        "w"
+        "<C-s>",
       ],
       "commands": [
         "workbench.action.files.save"
@@ -245,8 +248,8 @@
     {
       "before": [
         "<leader>",
-        "f",
-        "o"
+        "s",
+        "f"
       ],
       "commands": [
         "workbench.action.quickOpen"
@@ -255,7 +258,7 @@
     {
       "before": [
         "<leader>",
-        "f",
+        "s",
         "c"
       ],
       "commands": [
@@ -284,7 +287,7 @@
     {
       "before": [
         "<leader>",
-        "f",
+        "s",
         "s"
       ],
       "commands": [
@@ -579,6 +582,7 @@
   },
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.env.osx": {
+
     "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
@@ -610,5 +614,16 @@
   "vetur.format.options.tabSize": 4,
   "xml.format.splitAttributesIndentSize": 4,
   "redhat.telemetry.enabled": false,
-  "vim.neovimPath": "/usr/local/bin/nvim"
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.gpuAcceleration": "on",
+  "remote.SSH.showLoginTerminal": true,
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
