@@ -239,8 +239,7 @@
     },
     {
       "before": [
-        "<leader>",
-        "w"
+        "<C-s>",
       ],
       "commands": [
         "workbench.action.files.save"
@@ -249,8 +248,8 @@
     {
       "before": [
         "<leader>",
-        "f",
-        "o"
+        "s",
+        "f"
       ],
       "commands": [
         "workbench.action.quickOpen"
@@ -259,7 +258,7 @@
     {
       "before": [
         "<leader>",
-        "f",
+        "s",
         "c"
       ],
       "commands": [
@@ -288,7 +287,7 @@
     {
       "before": [
         "<leader>",
-        "f",
+        "s",
         "s"
       ],
       "commands": [

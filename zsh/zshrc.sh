@@ -1,5 +1,4 @@
-[[ ! -f ~/.dotfiles/zsh/aliases.sh ]] || source ~/.dotfiles/zsh/aliases.sh
-[[ ! -f ~/.dotfiles/zsh/functions.sh ]] || source ~/.dotfiles/zsh/functions.sh
+
 
 if [[ -d /usr/local/sbin ]]; then
     export PATH=/usr/local/sbin:$PATH
@@ -22,8 +21,8 @@ fi
 
 
 # Poetry python env variables
-export POETRY_CONFIG_DIR=~/.config/pypoetry
-export POETRY_CACHE_DIR=~/.cache/pypoetry
+# export POETRY_CONFIG_DIR=~/.config/pypoetry
+# export POETRY_CACHE_DIR=~/.cache/pypoetry
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -37,4 +36,13 @@ if [[ $TERM_PROGRAM == "WarpTerminal" || $TERM_PROGRAM == "iTerm.app" ]]; then
     eval "$(starship init zsh)"
 else
     ZSH_THEME="murilasso"
+fi
+
+
+if [[ -f ~/.dotfiles/zsh/aliases.sh ]]; then
+  source ~/.dotfiles/zsh/aliases.sh
+fi 
+
+if [[ -f ~/.dotfiles/zsh/functions.sh ]]; then
+  source ~/.dotfiles/zsh/functions.sh
 fi
