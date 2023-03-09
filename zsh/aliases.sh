@@ -9,6 +9,11 @@ else
   alias li='ls -la --icons'
 fi
 
+if command -v bat &>/dev/null
+then
+  alias cat='bat'
+fi
+
 alias duh='du -h -d 1 .'
 alias duh_='du -h -d 1 . > foldersizes.txt &'
 
