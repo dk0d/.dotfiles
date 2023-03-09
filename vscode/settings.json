@@ -625,5 +625,11 @@
   },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "latex-workshop.latex.texDirs": [
+    "${workspaceFolder}/src"
+  ],
+  "latex-workshop.intellisense.package.dirs": [
+    "${workspaceFolder}/packages"
+  ]
 }

@@ -58,16 +58,6 @@
     "when": "!inDebugMode && !terminalFocus"
   },
   {
-    "key": "shift+alt+cmd+t",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
     "key": "shift+cmd+h",
     "command": "extension.dash.emptySyntax",
     "when": "editorTextFocus"
