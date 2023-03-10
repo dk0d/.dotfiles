@@ -4,6 +4,7 @@ then
   alias la='ls -lGAh'
   alias ll='ls -lGh'
 else 
+  alias ls='exa -l'
   alias l='exa -l'
   alias la='exa -la'
   alias li='ls -la --icons'
@@ -12,6 +13,11 @@ fi
 if command -v bat &>/dev/null
 then
   alias cat='bat'
+fi
+
+if command -v rg &>/dev/null
+then
+  alias grep='rg'
 fi
 
 alias duh='du -h -d 1 .'
