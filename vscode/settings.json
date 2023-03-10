@@ -1,6 +1,6 @@
 {
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Serendipity Midnight V1",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
   "editor.minimap.enabled": false,
   // "python.jediEnabled": false,
   // "python.linting.pylintEnabled": false,
@@ -165,7 +165,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "java.semanticHighlighting.enabled": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "files.autoSave": "onFocusChange",
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
