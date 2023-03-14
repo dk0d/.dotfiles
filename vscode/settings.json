@@ -1,6 +1,6 @@
 {
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.colorTheme": "Sonokai Shusia",
   "editor.minimap.enabled": false,
   // "python.jediEnabled": false,
   // "python.linting.pylintEnabled": false,
@@ -24,6 +24,7 @@
     "**/data/**": true,
     "**/logs/**": true
   },
+  "python.linting.pylintEnabled": false,
   "latex-workshop.latex.autoBuild.interval": -1,
   "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
   "latex-workshop.synctex.afterBuild.enabled": true,
@@ -170,7 +171,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "python.languageServer": "Pylance",
   "cmake.configureOnOpen": true,
   "markdown.preview.fontSize": 12,
   // "workbench.editorAssociations": {
@@ -521,11 +521,11 @@
     {
       "before": [
         "<leader>",
-        "f",
+        "o",
         "i"
       ],
       "commands": [
-        "python.sortImports"
+        "editor.action.organizeImports"
       ]
     },
     {
@@ -582,7 +582,6 @@
   },
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.env.osx": {
-
     "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
@@ -604,13 +603,6 @@
   "debug.console.fontSize": 14,
   "debug.console.historySuggestions": false,
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-  "[swift]": {
-    "editor.defaultFormatter": "vknabel.vscode-swiftformat"
-  },
-  "apple-swift-format.path": [
-    "/usr/bin/env",
-    "swift-format"
-  ],
   "vetur.format.options.tabSize": 4,
   "xml.format.splitAttributesIndentSize": 4,
   "redhat.telemetry.enabled": false,
@@ -631,5 +623,6 @@
   ],
   "latex-workshop.intellisense.package.dirs": [
     "${workspaceFolder}/packages"
-  ]
+  ],
+  "git.openRepositoryInParentFolders": "never"
 }
