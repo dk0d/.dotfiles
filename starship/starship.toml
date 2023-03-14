@@ -84,6 +84,10 @@ $shell\
 $character"""
 
 
+[character]
+success_symbol = "[\uf0da](bold green)"
+error_symbol = "[\uf0da](bold red)"
+
 [line_break]
 disabled = false
 
@@ -109,9 +113,8 @@ format = '[$symbol($version )]($style)'
 # symbol = "⚙️  " 
 symbol = "\ue7a8 " 
 
-
 [directory]
-format = "\uf07c [$path]($style)[$read_only]($read_only_style) "
+format = "\uf07b [$path]($style)[$read_only]($read_only_style) "
 
 [username]
 format = "\uf007 [$user]($style) "
@@ -119,7 +122,8 @@ disabled = false
 show_always = true
 
 [hostname]
-format = '\([$ssh_symbol$hostname]($style)\) '
+format = '[$ssh_symbol$hostname]($style) '
+style = 'bold dimmed green'
 ssh_symbol = "🌎"
 ssh_only = false
 
@@ -127,7 +131,8 @@ ssh_only = false
 format = '[$symbol($version )]($style)'
 
 [git_branch]
-format = "┃ [$symbol$branch(:$remote_branch)]($style) "
+symbol = "\ue725"
+format = "[$symbol $branch(:$remote_branch)]($style) "
 
 [git_status]
 conflicted = "≠"
